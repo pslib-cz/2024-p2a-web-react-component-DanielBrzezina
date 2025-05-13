@@ -6,13 +6,13 @@ type PercentViewType = {
     makeColor: (percent: number) => string
 }
 
-const PercentView: FC<PercentViewType> = ({vlaue,max, makeColor}) => {
+const PercentView: FC<PercentViewType> = ({vlaue,max, makeColor}) => { // bere jednu proměnnou a bere z ní vlastnosti.
 
     return(
         <div className={style.percentview} style={ {backgroundColor:makeColor(vlaue/max)} }>
-            <p>{vlaue / max *100}%</p>
+            <p>{Math.round(vlaue) / max *100}%</p>
             <div className={style.bar} style={{ width:max}}>
-                <div className={style.barcolor} style={{ width:`${vlaue/max * 100}%`}}>
+                <div className={style.barcolor} style={{ width:`${vlaue/max * 100}%`, height:`${100%}` }}>
 
                 </div>
 
